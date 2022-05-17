@@ -4,24 +4,24 @@ import SearchedCapital from '../types/SearchedCapital';
 import Guess from '../types/Guess';
 
 type Props = {
-    addGuess: any
+    addGuess: any,
+    noCapitalGuess: any;
 }
 
-export default function Guesser({ addGuess }:Props) {
+export default function Guesser({ addGuess, noCapitalGuess }:Props) {
   const [guessedCapitalName, setGuessedCapitalName] = useState('');
+  const [disabled, setDisabled] = useState(false);
 
   function guessCapital() {
-    if (AllCapitals.exists(guessedCapitalName)) {
-      const guessedCapital = AllCapitals.getCapitalByName(guessedCapitalName);
-      const guess = new Guess(guessedCapital);
-      addGuess(guess);
+    const trimmedName = guessedCapitalName.trim();
+    if (AllCapitals.exists(trimmedName)) {
+      const guessedCapital = AllCapitals.getCapitalByName(trimmedName);
+      addGuess(new Guess(guessedCapital));
       if (SearchedCapital.capital.hasName(guessedCapital.name)) {
-        console.log('WIN!');
-      } else {
-        console.log(`${guessedCapital.name} is ${guess.distance} km away. Try again!`);
+        setDisabled(true);
       }
     } else {
-      console.log('no match');
+      noCapitalGuess(trimmedName);
     }
   }
 
@@ -29,6 +29,7 @@ export default function Guesser({ addGuess }:Props) {
     <form>
       <input
         autoComplete="off"
+        disabled={disabled}
         id="guess"
         name="guess"
         onChange={(e) => {
@@ -40,12 +41,13 @@ export default function Guesser({ addGuess }:Props) {
         value={guessedCapitalName}
       />
       <button
-        type="submit"
+        disabled={disabled}
         onClick={(e) => {
           e.preventDefault();
           guessCapital();
           setGuessedCapitalName('');
         }}
+        type="submit"
       >
         OK
       </button>

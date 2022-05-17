@@ -9,9 +9,9 @@
 .GuessList-row {
   border-bottom: 1px solid gray;
   display: grid;
-  grid-template-columns: minmax(150px, 250px) 90px 36px 36px;
+  grid-template-columns: minmax(150px, 255px) 85px 32px 26px;
   margin: auto;
-  max-width: 415px;
+  max-width: 400px;
 }
 
 .GuessList-name {
@@ -23,5 +23,10 @@
 }
 
 .GuessList-orientation {
-  font-size: 14px;
+  font-size: 10px;
+  text-align: right;
+}
+
+.GuessList-arrow {
+  text-align: right;
 }

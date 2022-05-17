@@ -19,12 +19,12 @@ export default function GuessList({ guesses }:Props) {
             {' '}
             km
           </div>
-          <div>
-            { guess.isSearchedCapital ? '🥳' : guess.direction.arrow}
-            {' '}
-          </div>
           <div className="GuessList-orientation">
             { !guess.isSearchedCapital ? guess.direction.compassOrientation : null}
+          </div>
+          <div className="GuessList-arrow">
+            { guess.isSearchedCapital ? '🥳' : guess.direction.arrow}
+            {' '}
           </div>
         </div>
       ))}

@@ -11,12 +11,17 @@ function App() {
   AllCapitals.readInCapitals();
   SearchedCapital.findSearchedCapitalOfTheDay();
   const [currentGuess, setCurrentGuess] = useState<Guess>();
+  const [guessedString, setGuessedString] = useState('');
   const [guesses, setGuesses] = useState<Guess[]>([]);
   const addGuess = (guess:Guess) => {
+    setCurrentGuess(guess);
     const currentGuesses = guesses;
     currentGuesses.push(guess);
     setGuesses(currentGuesses);
-    setCurrentGuess(guess);
+  };
+  const noCapitalGuess = (guessed:string) => {
+    setGuessedString(guessed);
+    setCurrentGuess(undefined);
   };
 
   return (
@@ -29,8 +34,8 @@ function App() {
         </h1>
         <p>Find the desired country capital by guessing capital names.</p>
       </header>
-      <Guesser addGuess={addGuess} />
-      <Message guess={currentGuess} />
+      <Guesser addGuess={addGuess} noCapitalGuess={noCapitalGuess} />
+      <Message guess={currentGuess} guessedString={guessedString} />
       <GuessList guesses={guesses} />
     </div>
   );
