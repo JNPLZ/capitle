@@ -1,0 +1,8 @@
+node_modules
+public
+
+*.svg
+
+# Ignore artifacts:
+build
+coverage
