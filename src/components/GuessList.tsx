@@ -1,5 +1,6 @@
 import React from 'react';
 import Guess from '../types/Guess';
+import './GuessList.css';
 
 type Props = {
     guesses: Guess[]
@@ -7,15 +8,24 @@ type Props = {
 
 export default function GuessList({ guesses }:Props) {
   return (
-    <div>
+    <div className="GuessList">
       {guesses.map((guess) => (
-        <div>
-          <span style={{ paddingRight: '2rem' }}>{guess.capital.name}</span>
-          <span>
-            {guess.distance}
+        <div key={guess.capital.name} className="GuessList-row">
+          <div className="GuessList-name">
+            {guess.capital.name }
+          </div>
+          <div className="GuessList-distance">
+            {guess.distance }
             {' '}
             km
-          </span>
+          </div>
+          <div>
+            { guess.isSearchedCapital ? '🥳' : guess.direction.arrow}
+            {' '}
+          </div>
+          <div className="GuessList-orientation">
+            { !guess.isSearchedCapital ? guess.direction.compassOrientation : null}
+          </div>
         </div>
       ))}
     </div>

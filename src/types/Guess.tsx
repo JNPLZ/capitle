@@ -1,4 +1,7 @@
+import * as geolib from 'geolib';
 import Capital from './Capital';
+import SearchedCapital from './SearchedCapital';
+import Direction from './Direction';
 
 class Guess {
   readonly capital: Capital;
@@ -7,10 +10,18 @@ class Guess {
 
   readonly isSearchedCapital: boolean;
 
-  constructor(capital: Capital, distance: number, isSearchedCapital: boolean) {
+  readonly direction: Direction;
+
+  constructor(capital: Capital) {
     this.capital = capital;
-    this.distance = distance;
-    this.isSearchedCapital = isSearchedCapital;
+    this.distance = this.calculateDistace();
+    this.isSearchedCapital = this.distance === 0;
+    this.direction = new Direction(this.capital);
+  }
+
+  private calculateDistace() {
+    const distanceInMeters = geolib.getDistance(this.capital, SearchedCapital.capital);
+    return Math.round(distanceInMeters / 1000);
   }
 }
 

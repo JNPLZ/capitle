@@ -10,19 +10,15 @@ type Props = {
 export default function Guesser({ addGuess }:Props) {
   const [guessedCapitalName, setGuessedCapitalName] = useState('');
 
-  function guess() {
+  function guessCapital() {
     if (AllCapitals.exists(guessedCapitalName)) {
       const guessedCapital = AllCapitals.getCapitalByName(guessedCapitalName);
-      console.log(guessedCapital);
+      const guess = new Guess(guessedCapital);
+      addGuess(guess);
       if (SearchedCapital.capital.hasName(guessedCapital.name)) {
         console.log('WIN!');
-        addGuess(new Guess(guessedCapital, 0, true));
       } else {
-        const distanceInKilometers = Math.round(
-          SearchedCapital.capital.distanceInKilometers(guessedCapital),
-        );
-        console.log(`${guessedCapital.name} is ${distanceInKilometers} km away. Try again!`);
-        addGuess(new Guess(guessedCapital, distanceInKilometers, false));
+        console.log(`${guessedCapital.name} is ${guess.distance} km away. Try again!`);
       }
     } else {
       console.log('no match');
@@ -39,6 +35,7 @@ export default function Guesser({ addGuess }:Props) {
           e.preventDefault();
           setGuessedCapitalName(e.currentTarget.value);
         }}
+        placeholder="Capital name"
         type="text"
         value={guessedCapitalName}
       />
@@ -46,7 +43,7 @@ export default function Guesser({ addGuess }:Props) {
         type="submit"
         onClick={(e) => {
           e.preventDefault();
-          guess();
+          guessCapital();
           setGuessedCapitalName('');
         }}
       >

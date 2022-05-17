@@ -1,0 +1,27 @@
+.GuessList {
+  padding: 6px;
+}
+
+.GuessList * {
+  align-self: center;
+}
+
+.GuessList-row {
+  border-bottom: 1px solid gray;
+  display: grid;
+  grid-template-columns: minmax(150px, 250px) 90px 36px 36px;
+  margin: auto;
+  max-width: 415px;
+}
+
+.GuessList-name {
+  text-align: left;
+}
+
+.GuessList-distance {
+  text-align: right;
+}
+
+.GuessList-orientation {
+  font-size: 14px;
+}
