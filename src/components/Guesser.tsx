@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AllCapitals from '../types/AllCapitals';
 import SearchedCapital from '../types/SearchedCapital';
 import Guess from '../types/Guess';
+import './Guesser.css';
 
 type Props = {
     addGuess: any,
@@ -26,9 +27,10 @@ export default function Guesser({ addGuess, noCapitalGuess }:Props) {
   }
 
   return (
-    <form>
+    <form className="Guesser-form">
       <input
         autoComplete="off"
+        className="Guesser-form-element"
         disabled={disabled}
         id="guess"
         name="guess"
@@ -41,6 +43,7 @@ export default function Guesser({ addGuess, noCapitalGuess }:Props) {
         value={guessedCapitalName}
       />
       <button
+        className="Guesser-form-element"
         disabled={disabled}
         onClick={(e) => {
           e.preventDefault();
