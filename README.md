@@ -28,3 +28,22 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+# Deployment
+
+## Setup
+
+Adapted from [https://github.com/gitname/react-gh-pages](https://github.com/gitname/react-gh-pages).
+
+- Execute `npm install gh-pages --save-dev` in terminal
+- In `package.json` 
+  - add `"homepage": "https://{username}.github.io/{repo-name}"` to root node
+  - add `"predeploy": "npm run build"` and `"deploy": "gh-pages -d build -o gh-pages"` to `scripts` node
+- Create and copy personal access token in github under [https://github.com/settings/tokens](https://github.com/settings/tokens)
+- Add git remote: `git remote add gh-pages https://{username}:{personal-access-token}@github.com/{usename}/{repo-name}.git`
+- After executing for the first time (see below): define source as deployment branch `gh-pages` under [https://github.com/{username}}/{repo-name}/settings/pages](https://github.com/{username}}/{repo-name}/settings/pages)
+
+## Execute: deploy
+
+- Execute `npm run predeploy`
+- Execute `npm run deploy`
