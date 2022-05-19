@@ -1,3 +1,31 @@
 .Guesser-form-element {
     font-size: 18px;
 }
+
+.Guesser-autosuggest {
+    display: inline-block;
+    margin: auto;
+    width: 260px;
+}
+
+.Guesser-autosuggest * ul {
+    padding: 0;
+}
+
+.Guesser-autosuggest * li {
+    list-style-type: none;
+}
+
+.Guesser-suggestions {
+    background-color: #20232A;
+    border-radius: 4px;
+    max-height: 200px;
+    opacity: 0.85;
+    overflow: auto;
+    position: absolute;
+    width: 260px;
+}
+
+.Guesser-suggestion {
+    padding: 3px 0;
+}

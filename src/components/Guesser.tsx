@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
+import Autosuggest from 'react-autosuggest';
 import AllCapitals from '../types/AllCapitals';
 import SearchedCapital from '../types/SearchedCapital';
 import Guess from '../types/Guess';
@@ -12,6 +14,7 @@ type Props = {
 export default function Guesser({ addGuess, noCapitalGuess }:Props) {
   const [guessedCapitalName, setGuessedCapitalName] = useState('');
   const [disabled, setDisabled] = useState(false);
+  const [suggestions, setSuggestions] = useState<string[]>([]);
 
   function guessCapital() {
     const trimmedName = guessedCapitalName.trim();
@@ -28,19 +31,51 @@ export default function Guesser({ addGuess, noCapitalGuess }:Props) {
 
   return (
     <form className="Guesser-form">
-      <input
-        autoComplete="off"
-        className="Guesser-form-element"
-        disabled={disabled}
-        id="guess"
-        name="guess"
-        onChange={(e) => {
-          e.preventDefault();
-          setGuessedCapitalName(e.currentTarget.value);
+      <Autosuggest
+        theme={{ suggestionHighlighted: 'font-bold' }}
+        shouldRenderSuggestions={() => true}
+        highlightFirstSuggestion
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={({ value }) => {
+          setSuggestions(
+            value.length > 1
+              ? AllCapitals.getCapitals()
+                .map((c) => c.name)
+                .filter((name) => name.toLowerCase().includes(value.toLowerCase())).sort()
+              : [],
+          );
         }}
-        placeholder="Capital name"
-        type="text"
-        value={guessedCapitalName}
+        onSuggestionsClearRequested={() => setSuggestions([])}
+        getSuggestionValue={(suggestion) => suggestion}
+        renderSuggestion={(suggestion) => (
+          <div className="Guesser-suggestion">
+            {suggestion}
+          </div>
+        )}
+        containerProps={{
+          className: 'Guesser-autosuggest',
+        }}
+        inputProps={{
+          autoComplete: 'off',
+          className: 'Guesser-form-element',
+          disabled,
+          id: 'guess',
+          name: 'guess',
+          onChange: (event, { newValue }) => {
+            setGuessedCapitalName(newValue);
+          },
+          placeholder: 'Capital name',
+          type: 'text',
+          value: guessedCapitalName,
+        }}
+        renderSuggestionsContainer={({ containerProps, children }) => (
+          <div
+            {...containerProps}
+            className="Guesser-suggestions"
+          >
+            {children}
+          </div>
+        )}
       />
       <button
         className="Guesser-form-element"
