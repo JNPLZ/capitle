@@ -38,4 +38,5 @@ Sources and inspiration:
 - General game and implementation ideas from [Worldle](https://github.com/teuteuf/worldle/)
 - Implementation ideas from [Globle](https://github.com/the-abe-train)
 - Capitals with geo data [techslides.com](http://techslides.com/list-of-countries-and-capitals)
+- List of countries recognized by the UN [Seterra](https://www.geoguessr.com/seterra/en/vgp/3356)
 - Favicon from [City icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/city)
