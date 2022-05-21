@@ -1,7 +1,9 @@
 class Capital {
   readonly name: string;
 
-  readonly country: string;
+  readonly countryName: string;
+
+  readonly countryCode: string;
 
   readonly longitude: number;
 
@@ -18,7 +20,8 @@ class Capital {
     ContinentName:string,
   ) {
     this.name = CapitalName;
-    this.country = CountryCode;
+    this.countryCode = CountryCode;
+    this.countryName = CountryName;
     this.longitude = parseInt(String(CapitalLongitude), 10);
     this.latitude = parseInt(String(CapitalLatitude), 10);
     this.continent = ContinentName;
@@ -26,6 +29,31 @@ class Capital {
 
   public hasName(name:string): boolean {
     return this.name.toLowerCase() === name.toLowerCase();
+  }
+
+  public wikipediaLink(): string {
+    const wikipediaBaseUrl = 'https://en.wikipedia.org/wiki/';
+    let urlNamePath;
+    switch (this.name) {
+      case 'Kingston':
+        urlNamePath = 'Kingston,_Jamaica';
+        break;
+      case 'Luxembourg':
+        urlNamePath = 'Luxembourg_City';
+        break;
+      case 'Male':
+        urlNamePath = 'Mal%C3%A9';
+        break;
+      case 'Saint John\'s':
+        urlNamePath = 'St._John\'s,_Antigua_and_Barbuda';
+        break;
+      case 'Saint George\'s':
+        urlNamePath = 'St._George%27s,_Grenada';
+        break;
+      default:
+        urlNamePath = this.name.replace(/ /g, '_');
+    }
+    return `${wikipediaBaseUrl}${urlNamePath}`;
   }
 
   private static deg2rad(deg: number) {

@@ -1,32 +1,81 @@
 .GuessList {
-  padding: 6px;
+    padding: 6px;
 }
 
 .GuessList * {
-  align-self: center;
+    align-self: center;
 }
 
 .GuessList-row {
-  border-bottom: 1px solid gray;
-  display: grid;
-  grid-template-columns: minmax(150px, 255px) 85px 32px 26px;
-  margin: auto;
-  max-width: 400px;
+    border-bottom: 1px solid gray;
+    display: grid;
+    grid-template-columns: minmax(150px, 255px) 85px 32px 26px;
+    margin: auto;
+    max-width: 400px;
 }
 
 .GuessList-name {
-  text-align: left;
+    text-align: left;
 }
 
 .GuessList-distance {
-  text-align: right;
+    text-align: right;
 }
 
 .GuessList-orientation {
-  font-size: 10px;
-  text-align: right;
+    font-size: 10px;
+    text-align: right;
 }
 
 .GuessList-arrow {
-  text-align: right;
+    text-align: right;
+}
+
+.GuessList-popup-content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.GuessList-additional-information {
+    bottom: 0;
+    font-size: 14px;
+    position: fixed;
+    width: 100%;
+}
+
+.wikipedia-logo {
+    background-color: white;
+}
+
+.popup-content {
+    background-color: #20232A;
+    border: 2px solid white;
+    border-radius: 3px;
+    color: white;
+    margin: auto;
+    padding: 5px;
+    max-width: 390px;
+}
+
+.popup-content a {
+    color: white;
+}
+
+.popup-arrow {
+    color: white;
+    opacity: 0.9;
+}
+
+[role='tooltip'].popup-content {
+    width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+}
+
+.popup-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+[data-popup='tooltip'].popup-overlay {
+    background: transparent;
 }
