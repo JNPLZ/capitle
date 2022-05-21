@@ -3,6 +3,7 @@ import AllCapitals from './AllCapitals';
 const dataProviderWikipediaLinks = [
   { expected: 'https://en.wikipedia.org/wiki/Addis_Ababa', capitalName: 'addis ababa' },
   { expected: 'https://en.wikipedia.org/wiki/Kingston,_Jamaica', capitalName: 'Kingston' },
+  { expected: 'https://en.wikipedia.org/wiki/Lomé', capitalName: 'Lome' },
   { expected: 'https://en.wikipedia.org/wiki/Luxembourg_City', capitalName: 'Luxembourg' },
   { expected: 'https://en.wikipedia.org/wiki/Mal%C3%A9', capitalName: 'Male' },
   { expected: 'https://en.wikipedia.org/wiki/St._George%27s,_Grenada', capitalName: 'Saint George\'s' },

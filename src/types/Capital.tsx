@@ -38,6 +38,9 @@ class Capital {
       case 'Kingston':
         urlNamePath = 'Kingston,_Jamaica';
         break;
+      case 'Lome':
+        urlNamePath = 'Lomé';
+        break;
       case 'Luxembourg':
         urlNamePath = 'Luxembourg_City';
         break;
