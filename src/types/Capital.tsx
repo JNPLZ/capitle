@@ -31,6 +31,10 @@ class Capital {
     return this.name.toLowerCase() === name.toLowerCase();
   }
 
+  public googleMapsLink(): string {
+    return `https://www.google.com/maps/?q=${encodeURIComponent(this.name)}+${this.countryCode.toUpperCase()}`;
+  }
+
   public wikipediaLink(): string {
     const wikipediaBaseUrl = 'https://en.wikipedia.org/wiki/';
     let urlNamePath;
