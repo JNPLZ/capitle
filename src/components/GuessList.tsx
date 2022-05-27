@@ -12,9 +12,10 @@ export default function GuessList({ guesses }:Props) {
     <div className="GuessList">
       {guesses.map((guess) => (
         <Popup
+          key={guess.capital.name}
           position="top left"
           trigger={(
-            <div key={guess.capital.name} className="GuessList-row">
+            <div className="GuessList-row">
               <div className="GuessList-name">
                 <span>{guess.capital.name }</span>
               </div>

@@ -1,0 +1,15 @@
+.Menu {
+  text-align: right;
+}
+
+.Menu button {
+  background: none;
+  border: 1px solid gray;
+  color: white;
+  padding: 5px;
+}
+
+.Menu .active {
+  background-color: #355786;
+  color: white;
+}

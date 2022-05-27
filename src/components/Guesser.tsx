@@ -34,7 +34,6 @@ export default function Guesser({ addGuess, noCapitalGuess }:Props) {
       <Autosuggest
         theme={{ suggestionHighlighted: 'font-bold' }}
         shouldRenderSuggestions={() => true}
-        highlightFirstSuggestion
         suggestions={suggestions}
         onSuggestionsFetchRequested={({ value }) => {
           setSuggestions(

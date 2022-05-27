@@ -39,14 +39,20 @@ class AllCapitals {
     return this.capitals.find((capital) => this.areNamesEqual(capital.name, name)) as Capital;
   }
 
-  private static areNamesEqual(a:string, b:string): boolean {
-    return a.toLowerCase() === b.toLowerCase();
+  public static getCapitalByCountryName(countryName:string): Capital {
+    return this.capitals.find(
+      (capital) => this.areNamesEqual(capital.countryName, countryName),
+    ) as Capital;
   }
 
   public static exists(name:string): boolean {
     return this.capitals.some(
       (capital) => this.areNamesEqual(capital.name, name),
     );
+  }
+
+  private static areNamesEqual(a:string, b:string): boolean {
+    return a.toLowerCase() === b.toLowerCase();
   }
 }
 
