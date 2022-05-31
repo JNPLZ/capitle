@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import Menu from './components/Menu';
-import Header from './components/Header';
 import AllCapitals from './types/AllCapitals';
 import SearchedCapital from './types/SearchedCapital';
 import Guess from './types/Guess';
+import Header from './components/Header';
 import Guesser from './components/Guesser';
 import Message from './components/Message';
 import GuessList from './components/GuessList';
-import Hint from './components/Hint';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -35,12 +34,13 @@ function App() {
 
   return (
     <div className="App">
-      <Menu showHint={showHint} toggleHintSection={toggleHintSection} />
-      <Header />
-      <Guesser addGuess={addGuess} noCapitalGuess={noCapitalGuess} />
-      <Message guess={currentGuess} guessedString={guessedString} />
-      <GuessList guesses={guesses} />
-      <Hint showHint={showHint} />
+      <div className="App-upper-content">
+        <Header />
+        <Guesser addGuess={addGuess} noCapitalGuess={noCapitalGuess} />
+        <Message guess={currentGuess} guessedString={guessedString} />
+        <GuessList guesses={guesses} />
+      </div>
+      <Footer showHint={showHint} toggleHintSection={toggleHintSection} />
     </div>
   );
 }

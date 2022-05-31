@@ -37,16 +37,13 @@
     justify-content: space-between;
 }
 
-.GuessList-additional-information {
-    bottom: 0;
-    font-size: 14px;
-    position: fixed;
-    width: 100%;
-}
-
 .GuessList-popup-content-links img {
     border: 0;
     margin: 0 5px;
+}
+
+.GuessList-additional-information {
+    font-size: 14px;
 }
 
 .wikipedia-logo {

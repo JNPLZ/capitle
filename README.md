@@ -35,8 +35,8 @@ Adapted from [https://github.com/gitname/react-gh-pages](https://github.com/gitn
 
 Sources and inspiration:
 
-- General game and implementation ideas from [Worldle](https://github.com/teuteuf/worldle/)
-- Implementation ideas from [Globle](https://github.com/the-abe-train)
-- Capitals with geo data [techslides.com](http://techslides.com/list-of-countries-and-capitals)
+- Capitals with geo data [techslides.com](http://techslides.com/list-of-countries-and-capitals) (partially updated and corrected)
 - List of countries recognized by the UN [Seterra](https://www.geoguessr.com/seterra/en/vgp/3356)
 - Favicon from [City icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/city)
+- General game and implementation ideas from [Worldle](https://github.com/teuteuf/worldle/)
+- Implementation ideas from [Globle](https://github.com/the-abe-train)
