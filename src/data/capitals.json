@@ -218,8 +218,8 @@
   {
     "CountryName": "Bulgaria",
     "CapitalName": "Sofia",
-    "CapitalLatitude": "42.68333333333333",
-    "CapitalLongitude": "23.316667",
+    "CapitalLatitude": "42.695",
+    "CapitalLongitude": "23.037",
     "CountryCode": "BG",
     "ContinentName": "Europe"
   },
@@ -844,7 +844,7 @@
     "CountryName": "North Macedonia",
     "CapitalName": "Skopje",
     "CapitalLatitude": "42",
-    "CapitalLongitude": "21.433333",
+    "CapitalLongitude": "21.3",
     "CountryCode": "MK",
     "ContinentName": "Europe"
   },
@@ -963,8 +963,8 @@
   {
     "CountryName": "Montenegro",
     "CapitalName": "Podgorica",
-    "CapitalLatitude": "42.43333333333333",
-    "CapitalLongitude": "19.266667",
+    "CapitalLatitude": "42.432",
+    "CapitalLongitude": "19.186",
     "CountryCode": "ME",
     "ContinentName": "Europe"
   },
@@ -1378,9 +1378,9 @@
   },
   {
     "CountryName": "Tanzania",
-    "CapitalName": "Dar es Salaam",
-    "CapitalLatitude": "-6.8",
-    "CapitalLongitude": "39.283333",
+    "CapitalName": "Dodoma",
+    "CapitalLatitude": "-6.3668551",
+    "CapitalLongitude": "35.4641242",
     "CountryCode": "TZ",
     "ContinentName": "Africa"
   },
