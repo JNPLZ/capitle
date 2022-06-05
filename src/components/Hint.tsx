@@ -12,6 +12,7 @@ export default function Hint({ showHint }: Props) {
   const [countryName, setCountryName] = useState('');
   const [hintText, setHintText] = useState('');
   const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [suggested, setSuggested] = useState(false);
 
   function getCapitalHint() {
     const trimmedName = countryName.trim();
@@ -72,7 +73,7 @@ export default function Hint({ showHint }: Props) {
           renderSuggestionsContainer={({ containerProps, children }) => (
             <div
               {...containerProps}
-              className={`Hint-suggestions ${countryName ? 'suggested' : ''}`}
+              className={`Hint-suggestions ${suggested ? 'suggested' : ''}`}
             >
               {children}
             </div>
@@ -85,6 +86,7 @@ export default function Hint({ showHint }: Props) {
             e.preventDefault();
             getCapitalHint();
             setCountryName('');
+            setSuggested(true);
           }}
         >
           OK
