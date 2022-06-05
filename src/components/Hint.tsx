@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
+import Autosuggest from 'react-autosuggest';
 import AllCapitals from '../types/AllCapitals';
 import './Hint.css';
 
@@ -10,6 +11,7 @@ type Props = {
 export default function Hint({ showHint }: Props) {
   const [countryName, setCountryName] = useState('');
   const [hintText, setHintText] = useState('');
+  const [suggestions, setSuggestions] = useState<string[]>([]);
 
   function getCapitalHint() {
     const trimmedName = countryName.trim();
@@ -30,18 +32,54 @@ export default function Hint({ showHint }: Props) {
         Type in a country name to get its capital.
       </p>
       <form>
-        <input
-          autoComplete="off"
-          name="hint"
-          onChange={(e) => {
-            e.preventDefault();
-            setCountryName(e.currentTarget.value);
+        <Autosuggest
+          theme={{ suggestionHighlighted: 'font-bold' }}
+          shouldRenderSuggestions={() => true}
+          suggestions={suggestions}
+          onSuggestionsFetchRequested={({ value }) => {
+            setSuggestions(
+              value.length > 1
+                ? AllCapitals.getCapitals()
+                  .map((c) => c.countryName)
+                  .filter((name) => name.toLowerCase().includes(value.toLowerCase())).sort()
+                : [],
+            );
           }}
-          placeholder="Country name"
-          type="text"
-          value={countryName}
+          onSuggestionsClearRequested={() => setSuggestions([])}
+          getSuggestionValue={(suggestion) => suggestion}
+          renderSuggestion={(suggestion) => (
+            <div className="Hint-suggestion">
+              {suggestion}
+            </div>
+          )}
+          containerProps={{
+            className: 'Hint-autosuggest',
+          }}
+          inputProps={{
+            autoComplete: 'off',
+            className: 'Hint-form-element',
+            // disabled,
+            id: 'hint',
+            name: 'hint',
+            onChange: (e, { newValue }) => {
+              e.preventDefault();
+              setCountryName(newValue);
+            },
+            placeholder: 'Country name',
+            type: 'text',
+            value: countryName,
+          }}
+          renderSuggestionsContainer={({ containerProps, children }) => (
+            <div
+              {...containerProps}
+              className={`Hint-suggestions ${countryName ? 'suggested' : ''}`}
+            >
+              {children}
+            </div>
+          )}
         />
         <button
+          className="Hint-form-element"
           type="submit"
           onClick={(e) => {
             e.preventDefault();

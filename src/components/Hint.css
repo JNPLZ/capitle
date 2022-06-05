@@ -1,9 +1,44 @@
 .Hint {
-  font-size: 14px;
   margin-top: 2rem;
 }
 
-.Hint input {
-  max-width: 250px;
-  width: 100%;
+.Hint-intro {
+}
+
+.Hint-form-element {
+  font-size: 18px;
+}
+
+.Hint-autosuggest {
+  display: inline-block;
+  margin: auto;
+  width: 260px;
+}
+
+.Hint-autosuggest * ul {
+  padding: 0;
+}
+
+.Hint-autosuggest * li {
+  list-style-type: none;
+}
+
+.Hint-suggestions {
+  background-color: #20232A;
+  border-radius: 4px;
+  bottom: 75px;
+  font-size: 18px;
+  max-height: 200px;
+  opacity: 0.85;
+  overflow: auto;
+  position: absolute;
+  width: 260px;
+}
+
+.Hint-suggestions.suggested {
+  bottom: 104px;
+}
+
+.Hint-suggestion {
+  padding: 3px 0;
 }
