@@ -8,10 +8,12 @@ import Message from './components/Message';
 import GuessList from './components/GuessList';
 import Footer from './components/Footer';
 import './App.css';
+import Tracker from './metrics/Tracker';
 
 function App() {
   AllCapitals.readInCapitals();
   SearchedCapital.findSearchedCapitalOfTheDay();
+  Tracker.trackPageVisit(true);
 
   const [currentGuess, setCurrentGuess] = useState<Guess>();
   const [guessedString, setGuessedString] = useState('');
