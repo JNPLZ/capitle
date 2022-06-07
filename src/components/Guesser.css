@@ -1,11 +1,15 @@
+.Guesser-form {
+    display: flex;
+    justify-content: center;
+}
+
 .Guesser-form-element {
     font-size: 18px;
 }
 
 .Guesser-autosuggest {
     display: inline-block;
-    margin: auto;
-    width: 260px;
+    max-width: 260px;
 }
 
 .Guesser-autosuggest * ul {

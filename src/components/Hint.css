@@ -5,13 +5,17 @@
 .Hint-intro {
 }
 
+.Hint-form {
+  display: flex;
+  justify-content: center;
+}
+
 .Hint-form-element {
   font-size: 18px;
 }
 
 .Hint-autosuggest {
   display: inline-block;
-  margin: auto;
   width: 260px;
 }
 

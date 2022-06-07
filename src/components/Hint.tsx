@@ -32,7 +32,7 @@ export default function Hint({ showHint }: Props) {
         {' '}
         Type in a country name to get its capital.
       </p>
-      <form>
+      <form className="Hint-form">
         <Autosuggest
           theme={{ suggestionHighlighted: 'font-bold' }}
           shouldRenderSuggestions={() => true}
