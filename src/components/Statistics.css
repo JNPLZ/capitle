@@ -1,0 +1,25 @@
+.Statistics {
+  border-bottom: 1px solid #355786;
+  font-size: 14px;
+  margin-top: 1rem;
+}
+
+.Statistics-headline {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  justify-content: space-between;
+}
+
+.Statistics-dummy {
+  width: 30px;
+}
+
+.Statistics-close {
+  background: none;
+  border: 0;
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  width: 30px;
+}

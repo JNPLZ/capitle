@@ -2,14 +2,29 @@ import React from 'react';
 import './Menu.css';
 
 type Props = {
+    showHelp: boolean,
+    toggleHelpSection: any,
     showHint: boolean,
-    toggleHintSection: any;
+    toggleHintSection: any,
+    showStatistics: boolean,
+    toggleStatisticsSection: any;
 }
 
-export default function Menu({ showHint, toggleHintSection }: Props) {
+export default function Menu({
+  showHelp, toggleHelpSection,
+  showHint, toggleHintSection,
+  toggleStatisticsSection, showStatistics,
+}: Props) {
   return (
     <nav className="Menu">
-      <form>
+      <form className="Menu-form">
+        <button
+          className={showHelp ? 'active' : ''}
+          type="button"
+          onClick={toggleHelpSection}
+        >
+          ❔ How to
+        </button>
         <button
           className={showHint ? 'active' : ''}
           type="button"
@@ -23,6 +38,13 @@ export default function Menu({ showHint, toggleHintSection }: Props) {
           }}
         >
           🤔 Hint
+        </button>
+        <button
+          className={showStatistics ? 'active' : ''}
+          type="button"
+          onClick={toggleStatisticsSection}
+        >
+          📊 Statistics
         </button>
       </form>
     </nav>

@@ -2,6 +2,13 @@
   border-bottom: 1px solid #355786;
 }
 
+.Menu-form {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 400px;
+}
+
 .Menu button {
   background: none;
   border: 0;

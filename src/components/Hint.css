@@ -1,7 +1,6 @@
 .Hint {
   border-top: 1px solid #355786;
   font-size: 14px;
-  margin-top: 2rem;
 }
 
 .Hint-form {
@@ -11,6 +10,7 @@
 
 .Hint-form-element {
   font-size: 18px;
+  max-height: 28px;
 }
 
 .Hint-autosuggest {
@@ -34,7 +34,6 @@
   max-height: 200px;
   opacity: 0.85;
   overflow: auto;
-  position: absolute;
   width: 260px;
 }
 
