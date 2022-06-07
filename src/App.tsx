@@ -6,9 +6,10 @@ import Header from './components/Header';
 import Guesser from './components/Guesser';
 import Message from './components/Message';
 import GuessList from './components/GuessList';
-import Footer from './components/Footer';
 import './App.css';
 import Tracker from './metrics/Tracker';
+import Menu from './components/Menu';
+import Hint from './components/Hint';
 
 function App() {
   AllCapitals.readInCapitals();
@@ -36,13 +37,16 @@ function App() {
 
   return (
     <div className="App">
-      <div className="App-upper-content">
-        <Header />
-        <Guesser addGuess={addGuess} noCapitalGuess={noCapitalGuess} />
-        <Message guess={currentGuess} guessedString={guessedString} />
-        <GuessList guesses={guesses} />
+      <div>
+        <Menu showHint={showHint} toggleHintSection={toggleHintSection} />
+        <main>
+          <Header />
+          <Guesser addGuess={addGuess} noCapitalGuess={noCapitalGuess} />
+          <Message guess={currentGuess} guessedString={guessedString} />
+          <GuessList guesses={guesses} />
+          <Hint showHint={showHint} />
+        </main>
       </div>
-      <Footer showHint={showHint} toggleHintSection={toggleHintSection} />
     </div>
   );
 }

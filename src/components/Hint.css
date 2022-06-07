@@ -1,8 +1,7 @@
 .Hint {
+  border-top: 1px solid #355786;
+  font-size: 14px;
   margin-top: 2rem;
-}
-
-.Hint-intro {
 }
 
 .Hint-form {

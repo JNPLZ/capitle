@@ -8,7 +8,7 @@ type Props = {
 
 export default function Menu({ showHint, toggleHintSection }: Props) {
   return (
-    <div className="Menu">
+    <nav className="Menu">
       <form>
         <button
           className={showHint ? 'active' : ''}
@@ -25,6 +25,6 @@ export default function Menu({ showHint, toggleHintSection }: Props) {
           🤔 Hint
         </button>
       </form>
-    </div>
+    </nav>
   );
 }

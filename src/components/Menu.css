@@ -1,6 +1,10 @@
+.Menu {
+  border-bottom: 1px solid #355786;
+}
+
 .Menu button {
   background: none;
-  border: 1px solid gray;
+  border: 0;
   color: white;
   padding: 5px;
 }
