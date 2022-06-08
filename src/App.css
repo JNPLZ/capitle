@@ -13,27 +13,3 @@
 .App-link {
   color: #61dafb;
 }
-
-.App-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.App-header h1 {
-  margin: 7px 0;
-  padding: 0;
-}
-
-.App-headline span:first-child {
-  padding-right: 1.5rem;
-}
-
-.App-headline span:last-child {
-  padding-left: 1.5rem;
-}
-
-.App-intro {
-  margin-top: 0;
-}

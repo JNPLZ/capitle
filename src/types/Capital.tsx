@@ -66,17 +66,6 @@ class Capital {
   private static deg2rad(deg: number) {
     return deg * (Math.PI / 180);
   }
-
-  public distanceInKilometers(capital:Capital): number {
-    const EARTH_RADIUS = 6371; // Radius of the earth in km
-    const dLat = Capital.deg2rad(capital.latitude - this.latitude);
-    const dLon = Capital.deg2rad(capital.longitude - this.longitude);
-    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2)
-        + Math.cos(Capital.deg2rad(this.latitude)) * Math.cos(Capital.deg2rad(capital.latitude))
-        * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return EARTH_RADIUS * c; // Distance in km
-  }
 }
 
 export default Capital;

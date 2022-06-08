@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
 import Autosuggest from 'react-autosuggest';
+import confetti from 'canvas-confetti';
 import AllCapitals from '../types/AllCapitals';
 import SearchedCapital from '../types/SearchedCapital';
 import Guess from '../types/Guess';
@@ -23,6 +24,7 @@ export default function Guesser({ addGuess, noCapitalGuess }:Props) {
       addGuess(new Guess(guessedCapital));
       if (SearchedCapital.capital.hasName(guessedCapital.name)) {
         setDisabled(true);
+        confetti();
       }
     } else {
       noCapitalGuess(trimmedName);

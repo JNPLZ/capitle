@@ -8,7 +8,7 @@ type Props = {
 }
 
 export default function Message({ guess, guessedString }:Props) {
-  const noGuessMarkup = <p>Type in a capital name and press OK to guess.</p>;
+  const noGuessMarkup = <p>Find the desired country capital by guessing capital names.</p>;
   const noCapitalMarkup = (
     <p>
       <i>{guessedString}</i>
@@ -24,11 +24,14 @@ export default function Message({ guess, guessedString }:Props) {
     </p>
   );
   const foundMarkup = (
-    <p>
-      <em>{guess?.capital.name}</em>
-      {' '}
-      is the desired capital. Congratulations!
-    </p>
+    <div>
+      <p>
+        <em>{guess?.capital.name}</em>
+        {' '}
+        is the desired capital. Congratulations!
+      </p>
+      {/* <p>You can take a look at your statistics.</p> */}
+    </div>
   );
 
   const isSearchedCapital = guess?.isSearchedCapital;
