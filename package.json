@@ -1,14 +1,14 @@
 {
   "name": "capitle",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "homepage": "https://thmbln.github.io/capitle/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.1",
-    "@types/node": "^16.11.35",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.2.4",
+    "@types/node": "^18.11.12",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "canvas-confetti": "^1.5.1",
@@ -22,7 +22,7 @@
     "reactjs-popup": "^2.0.5",
     "seedrandom": "^3.0.5",
     "typescript": "^4.6.4",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^3.1.0"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -56,12 +56,12 @@
     "@typescript-eslint/parser": "^5.23.0",
     "eslint": "^8.15.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-import-resolver-typescript": "^3.5.2",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.5.0",
     "gh-pages": "^4.0.0",
-    "prettier": "2.6.2"
+    "prettier": "2.8.1"
   }
 }
