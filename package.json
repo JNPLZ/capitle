@@ -2,7 +2,7 @@
   "name": "capitle",
   "version": "0.1.1",
   "private": true,
-  "homepage": "https://thmbln.github.io/capitle/",
+  "homepage": "https://jnplz.github.io/capitle/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
