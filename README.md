@@ -24,7 +24,7 @@ Adapted from [https://github.com/gitname/react-gh-pages](https://github.com/gitn
   - add `"predeploy": "npm run build"` and `"deploy": "gh-pages -d build -o gh-pages"` to `scripts` node
 - Create and copy personal access token in github under [https://github.com/settings/tokens](https://github.com/settings/tokens)
 - Add git remote: `git remote add gh-pages https://{username}:{personal-access-token}@github.com/{usename}/{repo-name}.git`
-- After executing for the first time (see below): define source as deployment branch `gh-pages` under [https://github.com/{username}}/{repo-name}/settings/pages](https://github.com/{username}}/{repo-name}/settings/pages)
+- After executing for the first time (see below): define source as deployment branch `gh-pages` under [https://github.com/{username}}/{repo-name}/settings/pages](https://github.com/{username}/{repo-name}/settings/pages)
 
 ## Execute: deploy
 
