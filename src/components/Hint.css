@@ -1,8 +1,28 @@
 .Hint {
   border-top: 1px solid #355786;
   font-size: 14px;
+  height: 300px;
   margin-top: 1rem;
   padding-top: 1rem;
+}
+
+.Hint-headline {
+  column-gap: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Hint-space {
+  width: 30px;
+}
+
+.Hint-close {
+  background: none;
+  border: 0;
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  width: 30px;
 }
 
 .Hint-form {

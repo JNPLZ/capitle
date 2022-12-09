@@ -17,6 +17,7 @@ function App() {
   AllCapitals.readInCapitals();
   SearchedCapital.findSearchedCapitalOfTheDay();
   Tracker.trackPageVisit(true);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 
   const [currentGuess, setCurrentGuess] = useState<Guess>();
   const [guessedString, setGuessedString] = useState('');
@@ -73,7 +74,7 @@ function App() {
             <Guesser addGuess={addGuess} noCapitalGuess={noCapitalGuess} />
             <Message guess={currentGuess} guessedString={guessedString} />
             <GuessList guesses={guesses} />
-            <Hint showHint={showHint} />
+            <Hint showHint={showHint} toggleHintSection={toggleHintSection} />
           </main>
         ) : null }
       </div>
