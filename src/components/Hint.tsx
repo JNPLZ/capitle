@@ -30,9 +30,9 @@ export default function Hint({ showHint, toggleHintSection }: Props) {
   }
 
   return (
-    <div className="Hint">
+    <div>
       {showHint ? (
-        <div>
+        <div className="Hint">
           <div className="Hint-headline">
             <div className="Hint-space" />
             <p className="Hint-hint">
