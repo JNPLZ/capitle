@@ -15,7 +15,7 @@ class Guess {
   constructor(capital: Capital) {
     this.capital = capital;
     this.distance = this.calculateDistace();
-    this.isSearchedCapital = this.distance === 0;
+    this.isSearchedCapital = this.capital === SearchedCapital.capital;
     this.direction = new Direction(this.capital);
   }
 

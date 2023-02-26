@@ -9,11 +9,9 @@ const dataProviderWikipediaLinks = [
   { expected: 'https://en.wikipedia.org/wiki/St._George%27s,_Grenada', capitalName: 'Saint George\'s' },
   { expected: 'https://en.wikipedia.org/wiki/St._John\'s,_Antigua_and_Barbuda', capitalName: 'Saint John\'s' },
 ];
-test('Correct Wikipedia link', () => {
+test.each(dataProviderWikipediaLinks)('Correct Wikipedia link', ({ expected, capitalName }) => {
   AllCapitals.readInCapitals();
-  dataProviderWikipediaLinks.forEach((testcase) => {
-    const capital = AllCapitals.getCapitalByName(testcase.capitalName);
-    const actual = capital.wikipediaLink();
-    expect(actual).toEqual(testcase.expected);
-  });
+  const capital = AllCapitals.getCapitalByName(capitalName);
+  const actual = capital.wikipediaLink();
+  expect(actual).toEqual(expected);
 });

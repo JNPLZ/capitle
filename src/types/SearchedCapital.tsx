@@ -16,6 +16,10 @@ class SearchedCapital {
   public static getSearchedCapitalOfTheDay() {
     return SearchedCapital.capital;
   }
+
+  public static mockCapital(capital: Capital) {
+    SearchedCapital.capital = capital;
+  }
 }
 
 export default SearchedCapital;
